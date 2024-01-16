@@ -20,7 +20,7 @@ export const fetchSinglePlayer = async (id) => {
     }
 }
 
-export const createPlayer = async (name, breed) => {
+export const createPlayer = async (name, breed, imageURL) => {
     try {
         const response = await fetch('https://fsa-puppy-bowl.herokuapp.com/api/2306-GHP-ET-WEB-PT/players/', {
             method: "POST",
@@ -28,7 +28,7 @@ export const createPlayer = async (name, breed) => {
                 "content-type": "application/json"
             },
             body: JSON.stringify({
-                name, breed
+                name, breed, imageURL
             })
         });
         const result = await response.json();
